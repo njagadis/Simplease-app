@@ -14,7 +14,7 @@ import { View, StyleSheet, Text, TextInput, Button, KeyboardAvoidingView, Toucha
 //   source={require('../../Logo/d.png')}
 // />
 
-import CreateAccount from '../CreateAccount/CreateAccount.js'
+import CreateAccount from './CreateAccount.js'
 
 export default class Login extends Component {
 
