@@ -5,13 +5,14 @@ const mongoose = require('mongoose');
 
 var app = express();
 
-var router = require('./services/router');
+var credentials = require('./services/router');
 
 mongoose.connect('mongodb://localhost:simplease/simplease');
 
 app.use(morgan('combined'));
 app.use(bodyParser.json());
-app.use('/v1', router);
+
+app.use('/v1', credentials); 
 
 var PORT = process.env.PORT || 3000;
 var HOST = process.env.HOST || '127.0.0.1';
