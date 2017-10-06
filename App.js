@@ -4,12 +4,12 @@ import { Navigator } from 'react-native-deprecated-custom-components'
 import SideMenu from 'react-native-elements'
 
 
-import Login from './components/Login/Login'
-import CreateAccount from './components/CreateAccount/CreateAccount'
-import Maps from './components/Maps/Maps'
-import ApartmentList from './components/ApartmentList/ApartmentList'
+import Login from '.app/components/Login'
+import CreateAccount from '.app/components/CreateAccount'
+import Maps from '.app/components/Maps'
+import ApartmentList from '.app/components/ApartmentList'
 //import Sidebar from './components/Sidebar/Sidebar'
-import TenantNotify from './components/TenantNotify/TenantNotify'
+import TenantNotify from '.app/components/TenantNotify'
 
 export default class App extends React.Component {
   render() {
