@@ -76,7 +76,7 @@ export default class CreateAccount extends Component {
       <View style={styles.logoContainer}>
         <Image
           style={styles.logo}
-          source={require('../../Logo/d.png')}
+          source={require('../img/logo/d.png')}
         />
 
       </View>
