@@ -1,57 +1,65 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- * @flow
- */
+import React from 'react';
+import { StyleSheet, Text, View, Dimensions } from 'react-native';
+import { Navigator } from 'react-native-deprecated-custom-components'
+import SideMenu from 'react-native-elements'
 
-import React, { Component } from 'react';
-import {
-  Platform,
-  StyleSheet,
-  Text,
-  View
-} from 'react-native';
 
-const instructions = Platform.select({
-  ios: 'Press Cmd+R to reload,\n' +
-    'Cmd+D or shake for dev menu',
-  android: 'Double tap R on your keyboard to reload,\n' +
-    'Shake or press menu button for dev menu',
-});
+import Login from './components/Login/Login'
+import CreateAccount from './components/CreateAccount/CreateAccount'
+import Maps from './components/Maps/Maps'
+import ApartmentList from './components/ApartmentList/ApartmentList'
+//import Sidebar from './components/Sidebar/Sidebar'
+import TenantNotify from './components/TenantNotify/TenantNotify'
 
-export default class App extends Component<{}> {
+export default class App extends React.Component {
   render() {
     return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to React Native!
-        </Text>
-        <Text style={styles.instructions}>
-          To get started, edit App.js
-        </Text>
-        <Text style={styles.instructions}>
-          {instructions}
-        </Text>
-      </View>
+
+      <Navigator initialRoute = {{ id: 'Login'}}
+      renderScene = {this.navigatorRenderScence} />
     );
   }
+
+  navigatorRenderScence(route, navigator) {
+    switch (route.id) {
+      case 'Login':
+        return (<Login navigator = {navigator} /> );
+      case 'CreateAccount':
+        return (<CreateAccount navigator = {navigator} /> );
+      case 'Maps':
+          return (<Maps navigator = {navigator} /> );
+      case 'ApartmentList':
+          return (<ApartmentList navigator = {navigator} /> );
+        break;
+    }
+  }
 }
+
+
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
+    backgroundColor: '#fff',
     alignItems: 'center',
-    backgroundColor: '#F5FCFF',
+    justifyContent: 'center',
   },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
+  map: {
+    left: 0,
+    right: 0,
+    top: 0,
+    bottom: 0,
+    position: 'absolute'
+  }
 });
+
+
+
+// export default class App extends React.Component {
+//   render() {
+//     return (
+//       <Maps />
+//
+//     );
+//   }
+// }
